@@ -14,7 +14,7 @@
         var x = el.offsetLeft;
         var y = el.offsetTop;
         var offsetParent = el.offsetParent;
-       
+
         while((el = el.parentNode) && el.scrollLeft !== undefined) {
           x -= el.scrollLeft;
           y -= el.scrollTop;
@@ -25,15 +25,17 @@
             offsetParent = el.offsetParent;
           }
         }
-       
+
         return {
           "x": x,
           "y": y
         };
       }
+
       if ($.os.ios && parseFloat(window.device.version) >= 7.0) {
         $(".app").css({"top":"20px"}); // status bar hax
       }
+
       var canvas = document.getElementById('canvas');
       canvas.width = $(".main").width();
       canvas.height = $(".main").height();
@@ -46,7 +48,6 @@
                             context.msBackingStorePixelRatio ||
                             context.oBackingStorePixelRatio ||
                             context.backingStorePixelRatio || 1,
-
         ratio = devicePixelRatio / backingStoreRatio;
 
       // ensure we have a value set for auto.
@@ -109,7 +110,7 @@
         // pass the coordinates to the appropriate handler
         drawer[event.type](coors);
       }
-       
+
       // attach the touchstart, touchmove, touchend event listeners.
       canvas.addEventListener('touchstart',draw, false);
       canvas.addEventListener('touchmove',draw, false);
