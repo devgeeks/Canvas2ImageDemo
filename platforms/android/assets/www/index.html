@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height" />
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <title>Canvas2ImagePlugin demo</title>
+  </head>
+  <body>
+    <div class="app">
+      <div class="nav">
+        <div class="btn save-btn left disabled clear"><a href="#">Clear</a></div>
+        <div class="title"><strong>Canvas2Image</strong></div>
+        <div class="btn save-btn right disabled save"><a href="#">Save</a></div>
+      </div>
+      <div class="main">
+        <canvas id="canvas" class="canvas">
+          <strong>[Your browser can not show this example.]</strong>
+        </canvas>
+      </div>
+    </div>
+    <script type="text/javascript" src="js/components/zepto/zepto.js"></script>
+    <script type="text/javascript" src="js/components/underscore/underscore.js"></script>
+    <script type="text/javascript" src="js/components/backbone/backbone.js"></script>
+    <script type="text/javascript" src="js/components/modernizr/modernizr.js"></script>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/Canvas2ImageDemo.js"></script>
+    <script type="text/javascript">
+      window.app && window.app.initialize();
+    </script>
+  </body>
+</html>
