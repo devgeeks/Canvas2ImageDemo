@@ -1,0 +1,5 @@
+platforms/**/*
+plugins/**/*
+www/js/Canvas2ImageDemo.js
+www/js/Canvas2ImageDemo.min.js
+www/js/components/**/*
