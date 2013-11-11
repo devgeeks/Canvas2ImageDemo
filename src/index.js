@@ -16,19 +16,19 @@
         var offsetParent = el.offsetParent;
        
         while((el = el.parentNode) && el.scrollLeft !== undefined) {
-                x -= el.scrollLeft;
-                y -= el.scrollTop;
-                if (el === offsetParent)
-                {
-                        x += el.offsetLeft;
-                        y += el.offsetTop;
-                        offsetParent = el.offsetParent;
-                }
+          x -= el.scrollLeft;
+          y -= el.scrollTop;
+          if (el === offsetParent)
+          {
+            x += el.offsetLeft;
+            y += el.offsetTop;
+            offsetParent = el.offsetParent;
+          }
         }
        
         return {
-                "x": x,
-                "y": y
+          "x": x,
+          "y": y
         };
       }
       if ($.os.ios && parseFloat(window.device.version) >= 7.0) {
@@ -88,26 +88,26 @@
          },
          touchmove: function(coors){
             if (this.isDrawing) {
-               context.lineTo(coors.x, coors.y);
-               context.stroke();
+              context.lineTo(coors.x, coors.y);
+              context.stroke();
             }
          },
          touchend: function(){
             if (this.isDrawing) {
-               this.isDrawing = false;
+              this.isDrawing = false;
             }
          }
       };
 
       // create a function to pass touch events and coordinates to drawer
       function draw(event){
-         // get the touch coordinates
-         var coors = {
-            x: event.touches[0].pageX - offset.x,
-            y: event.touches[0].pageY - offset.y
-         };
-         // pass the coordinates to the appropriate handler
-         drawer[event.type](coors);
+        // get the touch coordinates
+        var coors = {
+          x: event.touches[0].pageX - offset.x,
+          y: event.touches[0].pageY - offset.y
+        };
+        // pass the coordinates to the appropriate handler
+        drawer[event.type](coors);
       }
        
       // attach the touchstart, touchmove, touchend event listeners.
@@ -141,14 +141,14 @@
               return;
             }
             window.canvas2ImagePlugin.saveImageDataToLibrary(
-              function(msg){
+              function(msg) {
                   navigator.notification.alert(
                     msg,
                     function(){},
                     "Complete",
                     "OK");
               },
-              function(err){
+              function(err) {
                   navigator.notification.alert(
                     err,
                     function(){},
