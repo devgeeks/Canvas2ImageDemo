@@ -22,6 +22,7 @@ body {
   left: 0;
   bottom: 0;
   right: 0;
+  overflow: hidden;
 }
 
 .nav {
@@ -32,6 +33,7 @@ body {
   height: 44px;
   background-color: #e4e4e4;
   border-bottom: 1px solid #666;
+  overflow: hidden;
 }
 
 .nav .title {
@@ -96,6 +98,7 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
+  overflow: hidden;
 }
 
 canvas {
