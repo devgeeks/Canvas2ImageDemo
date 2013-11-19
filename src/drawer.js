@@ -74,8 +74,8 @@
     isDrawing: false,
     hasDrawing: false,
     touchstart: function(coors){
-      var saveButton = document.getElementsByClassName("save")[0];
-      var clearButton = document.getElementsByClassName("clear")[0];
+      var saveButton = document.getElementById("save");
+      var clearButton = document.getElementById("clear");
       this.context.lineWidth = 4;
       this.context.beginPath();
       this.context.moveTo(coors.x, coors.y);
@@ -107,8 +107,8 @@
   };
 
   var canvas = document.getElementById("canvas");
-  var saveButton = document.getElementsByClassName("save")[0];
-  var clearButton = document.getElementsByClassName("clear")[0];
+  var saveButton = document.getElementById("save");
+  var clearButton = document.getElementById("clear");
   drawer.init(canvas);
 
   canvas.addEventListener('touchstart', drawer.draw, false);
@@ -160,7 +160,7 @@
       },
       "Save",
       ["OK","Cancel"]);
-  });
+  }, false);
 
 
 })(window.drawer = window.drawer || {}, window);
