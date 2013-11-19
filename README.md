@@ -1,7 +1,7 @@
 Canvas2ImageDemo
 ================
 
-Demo app for my PhoneGap / Cordove Canvas2ImagePlugin
+Demo app for my PhoneGap / Cordove [Canvas2ImagePlugin](https://github.com/devgeeks/Canvas2ImagePlugin)
 
 
 ### Getting started
