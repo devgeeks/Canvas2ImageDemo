@@ -1,7 +1,7 @@
 platforms/*
 plugins/*
-bower_components/*
-node_modules/*
+bower_components
+node_modules
 www/js/Canvas2ImageDemo.js
 www/js/Canvas2ImageDemo.min.js
 www/js/components/*
