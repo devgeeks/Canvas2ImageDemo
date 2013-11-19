@@ -10,7 +10,6 @@
     onDeviceReady: function() {
 
       if (window.device.platform === "iOS" && parseFloat(window.device.version) >= 7.0) {
-        // $(".app").css({"top":"20px"}); // status bar hax
         var appElement = document.getElementsByClassName("app")[0];
         appElement.style.top = "20px";
       }

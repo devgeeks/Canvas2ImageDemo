@@ -80,7 +80,6 @@
       this.context.beginPath();
       this.context.moveTo(coors.x, coors.y);
       this.isDrawing = true;
-      // $(".save, .clear").removeClass("disabled");
       saveButton.classList.remove("disabled");
       clearButton.classList.remove("disabled");
     },
