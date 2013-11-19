@@ -8,7 +8,7 @@
 var pluginlist = [
   'org.apache.cordova.device',
   'org.apache.cordova.dialogs',
-  'org.devgeeks.Canvas2ImagePlugin'
+  'https://github.com/devgeeks/Canvas2ImagePlugin.git'
 ];
  
 // no need to configure below
