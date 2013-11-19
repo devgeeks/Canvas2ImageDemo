@@ -19,25 +19,6 @@ module.exports = function(grunt) {
       dist: {
         src: ['src/**/*.js'],
         dest: 'www/js/<%= pkg.name %>.js'
-      },
-      zepto: {
-        src: [
-          'bower_components/zepto/src/zepto.js',
-          'bower_components/zepto/src/ajax.js',
-          'bower_components/zepto/src/assets.js',
-          'bower_components/zepto/src/data.js',
-          'bower_components/zepto/src/detect.js',
-          'bower_components/zepto/src/event.js',
-          'bower_components/zepto/src/form.js',
-          'bower_components/zepto/src/fx.js',
-          'bower_components/zepto/src/fx_methods.js',
-          'bower_components/zepto/src/gesture.js',
-          'bower_components/zepto/src/polyfill.js',
-          'bower_components/zepto/src/selector.js',
-          'bower_components/zepto/src/stack.js',
-          'bower_components/zepto/src/touch.js'
-        ],
-        dest: 'www/js/components/zepto/zepto.js'
       }
     },
     uglify: {

@@ -2,14 +2,14 @@
   "use strict";
   var console = window.console || {};
   console.log = console.log || function(){};
-  var $ = window.Zepto;
 
   drawer = {
     init: function(canvas) {
       this.canvas = canvas;
       this.that = this;
-      canvas.width = $(".main").width();
-      canvas.height = $(".main").height() - 20;
+      var main = document.getElementsByClassName("main")[0];
+      canvas.width = main.offsetWidth;
+      canvas.height = main.offsetHeight - 20;
       this.offset = this.getAbsolutePosition(canvas);
       this.context = canvas.getContext('2d');
       var auto = true,
@@ -74,11 +74,15 @@
     isDrawing: false,
     hasDrawing: false,
     touchstart: function(coors){
-       this.context.lineWidth = 4;
-       this.context.beginPath();
-       this.context.moveTo(coors.x, coors.y);
-       this.isDrawing = true;
-       $(".save, .clear").removeClass("disabled");
+      var saveButton = document.getElementsByClassName("save")[0];
+      var clearButton = document.getElementsByClassName("clear")[0];
+      this.context.lineWidth = 4;
+      this.context.beginPath();
+      this.context.moveTo(coors.x, coors.y);
+      this.isDrawing = true;
+      // $(".save, .clear").removeClass("disabled");
+      saveButton.classList.remove("disabled");
+      clearButton.classList.remove("disabled");
     },
     touchmove: function(coors){
       if (this.isDrawing) {
@@ -104,6 +108,8 @@
   };
 
   var canvas = document.getElementById("canvas");
+  var saveButton = document.getElementsByClassName("save")[0];
+  var clearButton = document.getElementsByClassName("clear")[0];
   drawer.init(canvas);
 
   canvas.addEventListener('touchstart', drawer.draw, false);
@@ -111,8 +117,8 @@
   canvas.addEventListener('touchmove', drawer.draw, false);
   canvas.addEventListener('touchend', drawer.draw, false);
 
-  $(".clear").on("tap", function() {
-    if ($(this).hasClass("disabled")) {
+  clearButton.addEventListener('touchend', function() {
+    if ("disabled" in this.classList) {
       return;
     }
     var canvas = drawer.canvas;
@@ -120,11 +126,12 @@
     context.fillStyle = "rgb(255,255,255)";
     context.fillRect (0, 0, canvas.width, canvas.height);
     drawer.hasDrawing = false;
-    $(".save, .clear").addClass("disabled");
-  });
+    saveButton.classList.add("disabled");
+    clearButton.classList.add("disabled");
+  }, false);
 
-  $(".save").on("tap", function(){
-    if ($(this).hasClass("disabled")) {
+  saveButton.addEventListener('touchend', function() {
+    if ("disabled" in this.classList) {
       return;
     }
     navigator.notification.confirm(
@@ -150,7 +157,7 @@
           },
           drawer.canvas
         );
-        $(".save").addClass("disabled");
+        saveButton.classList.add("disabled");
       },
       "Save",
       ["OK","Cancel"]);

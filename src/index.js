@@ -2,7 +2,6 @@
   "use strict";
   var console = window.console || {};
   console.log = console.log || function(){};
-  var $ = window.Zepto;
 
   window.app = {
     initialize: function() {
@@ -10,8 +9,10 @@
     },
     onDeviceReady: function() {
 
-      if ($.os.ios && parseFloat(window.device.version) >= 7.0) {
-        $(".app").css({"top":"20px"}); // status bar hax
+      if (window.device.platform === "iOS" && parseFloat(window.device.version) >= 7.0) {
+        // $(".app").css({"top":"20px"}); // status bar hax
+        var appElement = document.getElementsByClassName("app")[0];
+        appElement.style.top = "20px";
       }
       
     }
