@@ -4,19 +4,17 @@
   "description": "Canvas2ImagePlugin demo",
   "main": "Gruntfile.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build-js": "cat src/*.js > www/js/Canvas2ImageDemo.js",
+    "emulate-ios": "npm run build-js && cordova build ios && cordova emulate ios",
+    "run-ios": "npm run build-js && cordova build ios && cordova run ios",
+    "emulate-android": "npm run build-js && cordova build android && cordova emulate android",
+    "run-android": "npm run build-js && cordova build android && cordova run android"
   },
   "author": "Tommy-Carlos Williams (devgeeks)",
   "licenses": [
     {
       "type": "MIT"
     }
-  ],
-  "devDependencies": {
-    "grunt": "~0.4.1",
-    "grunt-contrib-concat": "~0.3.0",
-    "grunt-contrib-uglify": "~0.2.6",
-    "grunt-contrib-jshint": "~0.7.1",
-    "grunt-contrib-watch": "~0.5.3"
-  }
+  ]
 }
