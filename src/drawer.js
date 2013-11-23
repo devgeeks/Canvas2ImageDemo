@@ -95,6 +95,7 @@
       }
     },
     draw: function(event){
+      event.preventDefault();
       // get the touch coordinates
       var offset = drawer.getAbsolutePosition(drawer.canvas);
       var coors = {
