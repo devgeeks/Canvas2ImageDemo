@@ -10,7 +10,6 @@ Demo app for my PhoneGap / Cordove [Canvas2ImagePlugin](https://github.com/devge
 
 - Node / npm
 - Cordova CLI (3.0+): `npm install -g cordova`
-- Grunt (0.4.0+): `npm install -g grunt-cli`
 
 #### Setting up and running the project (from project root):
 
