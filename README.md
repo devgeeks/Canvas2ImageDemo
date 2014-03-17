@@ -13,6 +13,7 @@ Demo app for my PhoneGap / Cordove [Canvas2ImagePlugin](https://github.com/devge
 
 #### Setting up and running the project (from project root):
 
+- `npm install` - to add the Canvas2Image plugin
 - `cordova platforms add ios` *and / or* `cordova platform add android` - to add a platform target to the project
 - `npm run build-js` - to concat any js to a single script
 - `npm run emulate-ios` - builds js then builds for iOS and runs on the emulator
