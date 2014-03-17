@@ -9,7 +9,8 @@
     "emulate-ios": "npm run build-js && cordova build ios && cordova emulate ios",
     "run-ios": "npm run build-js && cordova build ios && cordova run ios",
     "emulate-android": "npm run build-js && cordova build android && cordova emulate android",
-    "run-android": "npm run build-js && cordova build android && cordova run android"
+    "run-android": "npm run build-js && cordova build android && cordova run android",
+    "postinstall": "cordova plugin add org.devgeeks.canvas2imageplugin"
   },
   "author": "Tommy-Carlos Williams (devgeeks)",
   "licenses": [
